@@ -1,0 +1,8 @@
+std_msgs/Header header
+geometry_msgs/Vector3 angular_velocity_desired
+geometry_msgs/Quaternion quaternion_desired
+float64 thrust_desired
+uint8 active_offboard
+uint8 active_attitude
+uint8 active_acro
+

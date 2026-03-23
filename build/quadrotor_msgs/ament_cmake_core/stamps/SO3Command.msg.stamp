@@ -1,0 +1,11 @@
+std_msgs/Header header
+geometry_msgs/Vector3 force
+geometry_msgs/Quaternion orientation
+geometry_msgs/Vector3 angular_velocity
+quadrotor_msgs/AuxCommand aux
+float64[3] kx
+float64[3] kv
+float64[3] kr
+float64[3] kom
+geometry_msgs/Vector3 torque
+float64 thrust

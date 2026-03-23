@@ -1,0 +1,73 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_install",
+			"ament_cmake_symlink_install_targets",
+			"install"
+		],
+		"files" : 
+		[
+			"/opt/ros/humble/share/ament_cmake_core/cmake/symlink_install/ament_cmake_symlink_install_targets.cmake",
+			"/opt/ros/humble/share/ament_cmake_core/cmake/symlink_install/install.cmake",
+			"plugin/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 37,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 50,
+				"parent" : 2
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/home/bryansgue/uav_ws/mujoco-3.4.0/bin/mujoco_plugin",
+			"paths" : 
+			[
+				"plugin/libMujocoRosUtils.so"
+			],
+			"targetId" : "MujocoRosUtils::@26efe8164589a77d2096",
+			"targetIndex" : 18,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/home/bryansgue/uav_ws/mujoco-3.4.0/bin/mujoco_plugin",
+			"paths" : 
+			[
+				"plugin/libMujocoRosUtilsPlugin.so"
+			],
+			"targetId" : "MujocoRosUtilsPlugin::@26efe8164589a77d2096",
+			"targetIndex" : 19,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "plugin",
+		"source" : "plugin"
+	}
+}

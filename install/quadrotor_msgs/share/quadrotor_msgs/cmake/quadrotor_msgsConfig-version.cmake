@@ -1,0 +1,1 @@
+/home/bryansgue/uav_ws/build/quadrotor_msgs/ament_cmake_core/quadrotor_msgsConfig-version.cmake

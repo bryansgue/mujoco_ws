@@ -1,0 +1,1 @@
+/home/bryansgue/uav_ws/build/quadrotor_msgs/rosidl_generator_c/quadrotor_msgs/msg/aux_command.h

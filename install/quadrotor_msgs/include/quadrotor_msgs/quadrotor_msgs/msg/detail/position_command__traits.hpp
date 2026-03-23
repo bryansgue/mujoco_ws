@@ -1,0 +1,1 @@
+/home/bryansgue/uav_ws/build/quadrotor_msgs/rosidl_generator_cpp/quadrotor_msgs/msg/detail/position_command__traits.hpp

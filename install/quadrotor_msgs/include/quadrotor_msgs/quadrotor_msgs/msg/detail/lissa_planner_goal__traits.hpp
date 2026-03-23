@@ -1,0 +1,1 @@
+/home/bryansgue/uav_ws/build/quadrotor_msgs/rosidl_generator_cpp/quadrotor_msgs/msg/detail/lissa_planner_goal__traits.hpp
