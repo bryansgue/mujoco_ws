@@ -77,7 +77,7 @@ protected:
   double kw_y_{35.0};
   double kw_z_{45.0};
   Eigen::Matrix3d kom_ = Eigen::Vector3d(kw_x_, kw_y_, kw_z_).asDiagonal();
-  Eigen::Matrix3d J_ = Eigen::Vector3d(0.00345398, 0.00179687, 0.00179676).asDiagonal();
+  Eigen::Matrix3d J_ = Eigen::Matrix3d::Identity();  // Initialized from MuJoCo in constructor
 
   // ── Motor model parameters ──
   bool motor_model_enabled_ = false;
@@ -105,6 +105,15 @@ protected:
   // Mixer: allocation matrix  [F, τx, τy, τz] → [ω1², ω2², ω3², ω4²]
   // and its inverse for converting desired wrench → desired motor speeds
   Eigen::Matrix4d mixer_inv_;  // wrench → omega_i^2
+
+  // ── Visual propeller joints ──
+  // Joint IDs for the 4 propeller hinge joints (visual spinning).
+  // The plugin writes motor_omega_ to qvel of these joints each timestep.
+  // -1 means not found (no visual propellers in the model).
+  int prop_joint_id_[4] = {-1, -1, -1, -1};
+  // Spin direction: +1 for CCW, -1 for CW (Betaflight convention)
+  //   M1 CW(-1), M2 CCW(+1), M3 CW(-1), M4 CCW(+1)
+  double prop_spin_dir_[4] = {-1.0, 1.0, -1.0, 1.0};
 
   // Simulation Timing
   double ctrl_dt_ = 0.0;

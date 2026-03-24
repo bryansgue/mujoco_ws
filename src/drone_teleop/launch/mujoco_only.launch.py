@@ -8,7 +8,8 @@ Escenas disponibles (argumento 'scene'):
   motors     — drone + payload CON modelo de motores realista (gemelo digital)
 """
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, RegisterEventHandler, Shutdown
+from launch.event_handlers import OnProcessExit, OnShutdown
 from launch.substitutions import LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 import os
@@ -58,11 +59,23 @@ def mujoco_setup(context, *args, **kwargs):
     with open(temp_xml, "w") as f:
         f.write(doc.toxml())
 
-    return [ExecuteProcess(
+    mujoco_process = ExecuteProcess(
         cmd=[mujoco_bin, temp_xml],
         cwd=os.path.dirname(mujoco_bin),
         output="screen",
-    )]
+        sigterm_timeout="3",
+        sigkill_timeout="2",
+    )
+
+    # Shut down the entire launch when MuJoCo window is closed
+    shutdown_on_mujoco_exit = RegisterEventHandler(
+        OnProcessExit(
+            target_action=mujoco_process,
+            on_exit=[Shutdown(reason="MuJoCo cerrado")],
+        )
+    )
+
+    return [mujoco_process, shutdown_on_mujoco_exit]
 
 
 def generate_launch_description():

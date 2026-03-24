@@ -56,8 +56,11 @@ colcon build --symlink-install --packages-select mujoco_ros_utils \
 
 ```bash
 source ~/uav_ws/install/setup.bash
-ros2 launch drone_teleop mujoco_only.launch.py
+mujoco_launch.sh scene:=motors
 ```
+
+> `mujoco_launch.sh` es un wrapper que maneja Ctrl+C correctamente, cerrando MuJoCo y todos los nodos ROS 2.
+> También puedes usar directamente: `ros2 launch drone_teleop mujoco_only.launch.py`
 
 #### Escenas disponibles (argumento `scene`)
 
@@ -160,7 +163,7 @@ Tu controlador
 │  Controlador de rates interno:     │
 │    τ = ω×(J·ω) - J·Kom·(ω - ωd)  │
 │                                    │
-│  J   = diag(0.00345, 0.00180, 0.00180) kg·m²  │
+│  J   = leída de MuJoCo (auto)     │
 │  Kom = diag(20, 35, 45)            │
 │  Hz  = 500                         │
 └────────────────────────────────────┘
@@ -178,9 +181,7 @@ Tu controlador
 | Thrust hover | `≈ 10.6 N` (masa × 9.81) |
 | Thrust máximo | `82.0 N` |
 | Torques máximos | `±0.3 N·m` (roll, pitch, yaw) |
-| Inercia Jxx | `0.00345 kg·m²` |
-| Inercia Jyy | `0.00180 kg·m²` |
-| Inercia Jzz | `0.00180 kg·m²` |
+| Inercia J | Auto-calculada por MuJoCo desde masas/geometrías del XML |
 | Timestep MuJoCo | `0.003 s` (333 Hz) |
 | Integrador | `RK4` |
 
@@ -230,10 +231,11 @@ ros2 launch drone_teleop mujoco_only.launch.py init_x:=1.0 init_y:=0.5 init_z:=0
 double kw_x_{20.0};   // Ganancia roll rate
 double kw_y_{35.0};   // Ganancia pitch rate
 double kw_z_{45.0};   // Ganancia yaw rate
-Eigen::Matrix3d J_ = Eigen::Vector3d(0.00345398, 0.00179687, 0.00179676).asDiagonal();
+// J_ se lee automáticamente de MuJoCo (m->body_inertia) — no necesitas editarla
 ```
 
 > Después de editar este archivo debes **recompilar** `mujoco_ros_utils`.
+> La inercia J se lee automáticamente de MuJoCo al iniciar. Si cambias masas o geometrías en el XML, J se actualiza sin tocar código.
 
 ### 3. Cambiar las ganancias del controlador PD de teleop
 

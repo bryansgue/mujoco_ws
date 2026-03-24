@@ -37,10 +37,55 @@
       <geom name="${prefix}_a20" type="box" pos="-0.071 -0.071 0.0" size="0.05 0.01 0.0025" quat="-.383 0 0 0.924" rgba="1 0.5 0 1" mass=".035"/>
       <geom name="${prefix}_a30" type="box" pos="-.071 0.071 0.0" size="0.05 0.01 0.0025" quat=".924 0 0 -0.383" rgba="1 0.5 0 1" mass=".035"/>
 
-      <geom name="${prefix}_thruster00" type="cylinder" pos="0.1 0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".015"/>
-      <geom name="${prefix}_thruster10" type="cylinder" pos="0.1 -0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".015"/>
-      <geom name="${prefix}_thruster20" type="cylinder" pos="-0.1 -0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".015"/>
-      <geom name="${prefix}_thruster30" type="cylinder" pos="-0.1 0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".015"/>
+      <!-- Motor housings (same as original) -->
+      <geom name="${prefix}_thruster00" type="cylinder" pos="0.1 0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".012"/>
+      <geom name="${prefix}_thruster10" type="cylinder" pos="0.1 -0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".012"/>
+      <geom name="${prefix}_thruster20" type="cylinder" pos="-0.1 -0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".012"/>
+      <geom name="${prefix}_thruster30" type="cylinder" pos="-0.1 0.1 0.01" size="0.03 0.0025" quat="1.0 0.0 0.0 0." rgba="0.0 0.0 0.0 1.0" mass=".012"/>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!--  PROPELLERS: visual spinning blades driven by plugin   -->
+      <!--  Each propeller is a child body with a free-spin hinge -->
+      <!--  joint on the Z axis. The plugin sets qvel to match    -->
+      <!--  the motor angular velocity for visual fidelity.       -->
+      <!--                                                        -->
+      <!--  Betaflight X-config:                                  -->
+      <!--    M1 (front-right, +x,-y) CW                         -->
+      <!--    M2 (rear-right,  -x,-y) CCW                        -->
+      <!--    M3 (rear-left,   -x,+y) CW                         -->
+      <!--    M4 (front-left,  +x,+y) CCW                        -->
+      <!--                                                        -->
+      <!--  Blade geoms: 2 rectangular blades (cross) per prop    -->
+      <!--  Mass: 0.003 kg each (total 0.012 kg for 4 props)     -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Propeller 1: front-right (CW) -->
+      <body name="${prefix}_prop1" pos="0.1 -0.1 0.015">
+        <joint name="${prefix}_prop1_spin" type="hinge" axis="0 0 1" frictionloss="0.0001" damping="0.00001" armature="1e-6"/>
+        <geom name="${prefix}_blade1a" type="box" pos="0 0 0" size="0.055 0.008 0.001" rgba="0.2 0.2 0.2 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+        <geom name="${prefix}_blade1b" type="box" pos="0 0 0" size="0.008 0.055 0.001" rgba="0.2 0.2 0.2 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+      </body>
+
+      <!-- Propeller 2: rear-right (CCW) -->
+      <body name="${prefix}_prop2" pos="-0.1 -0.1 0.015">
+        <joint name="${prefix}_prop2_spin" type="hinge" axis="0 0 1" frictionloss="0.0001" damping="0.00001" armature="1e-6"/>
+        <geom name="${prefix}_blade2a" type="box" pos="0 0 0" size="0.055 0.008 0.001" rgba="0.3 0.3 0.9 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+        <geom name="${prefix}_blade2b" type="box" pos="0 0 0" size="0.008 0.055 0.001" rgba="0.3 0.3 0.9 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+      </body>
+
+      <!-- Propeller 3: rear-left (CW) -->
+      <body name="${prefix}_prop3" pos="-0.1 0.1 0.015">
+        <joint name="${prefix}_prop3_spin" type="hinge" axis="0 0 1" frictionloss="0.0001" damping="0.00001" armature="1e-6"/>
+        <geom name="${prefix}_blade3a" type="box" pos="0 0 0" size="0.055 0.008 0.001" rgba="0.2 0.2 0.2 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+        <geom name="${prefix}_blade3b" type="box" pos="0 0 0" size="0.008 0.055 0.001" rgba="0.2 0.2 0.2 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+      </body>
+
+      <!-- Propeller 4: front-left (CCW) -->
+      <body name="${prefix}_prop4" pos="0.1 0.1 0.015">
+        <joint name="${prefix}_prop4_spin" type="hinge" axis="0 0 1" frictionloss="0.0001" damping="0.00001" armature="1e-6"/>
+        <geom name="${prefix}_blade4a" type="box" pos="0 0 0" size="0.055 0.008 0.001" rgba="0.3 0.3 0.9 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+        <geom name="${prefix}_blade4b" type="box" pos="0 0 0" size="0.008 0.055 0.001" rgba="0.3 0.3 0.9 0.7" mass="0.0015" contype="0" conaffinity="0"/>
+      </body>
 
       <site name="${prefix}_thrust" type="box" pos="0 0 0" size="0.035 0.035 0.015" rgba="0 1 1 1"/>
       <site name="${prefix}_rateX" type="box" pos="0 0 0" size="0.035 0.035 0.015" rgba="0 1 1 1"/>

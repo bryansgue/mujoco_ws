@@ -108,6 +108,17 @@ AcroMode * AcroMode::Create(const mjModel * m, mjData * d, int plugin_id)
                       motor_model, arm_length, kf, km, motor_tau, motor_omega_max, drag_coeff);
 }
 
+// ---------- Helper: find propeller joints ----------
+static void find_propeller_joints(const mjModel * m, const std::string & body_name, int * prop_ids)
+{
+  // Expected joint names: <body_name>_prop1_spin .. _prop4_spin
+  for(int i = 0; i < 4; ++i)
+  {
+    std::string jname = body_name + "_prop" + std::to_string(i + 1) + "_spin";
+    prop_ids[i] = mj_name2id(m, mjOBJ_JOINT, jname.c_str());
+  }
+}
+
 // ---------- Constructor ----------
 AcroMode::AcroMode(const mjModel * m,
                    mjData * d,
@@ -132,6 +143,15 @@ AcroMode::AcroMode(const mjModel * m,
   motor_tau_(motor_tau), motor_omega_max_(motor_omega_max), drag_coeff_(drag_coeff)
 {
   ctrl_dt_ = 1.0 / hz;
+
+  // ── Read inertia directly from MuJoCo (consistent with simulated body) ──
+  J_ = Eigen::Vector3d(
+      m->body_inertia[3 * bid],
+      m->body_inertia[3 * bid + 1],
+      m->body_inertia[3 * bid + 2]
+  ).asDiagonal();
+  printf("[AcroMode] Inertia from MuJoCo body '%s': Jxx=%.6f  Jyy=%.6f  Jzz=%.6f\n",
+         bname.c_str(), J_(0,0), J_(1,1), J_(2,2));
 
   // ── Build the mixer matrix (X-configuration, Betaflight convention) ──
   //
@@ -178,6 +198,26 @@ AcroMode::AcroMode(const mjModel * m,
     printf("  arm_length=%.4f  kf=%.3e  km=%.3e\n", arm_length_, kf_, km_);
     printf("  motor_tau=%.4f  motor_omega_max=%.1f  drag_coeff=%.4f\n",
            motor_tau_, motor_omega_max_, drag_coeff_);
+
+    // ── Find visual propeller joints ──
+    find_propeller_joints(m, bname, prop_joint_id_);
+    bool all_found = true;
+    for(int i = 0; i < 4; ++i)
+    {
+      if(prop_joint_id_[i] < 0) all_found = false;
+    }
+    if(all_found)
+    {
+      printf("  [Propellers] Visual propeller joints found — blades will spin!\n");
+      for(int i = 0; i < 4; ++i)
+        printf("    prop%d_spin -> joint_id=%d (dir=%+.0f)\n",
+               i + 1, prop_joint_id_[i], prop_spin_dir_[i]);
+    }
+    else
+    {
+      printf("  [Propellers] Some propeller joints NOT found — visual spin disabled.\n");
+      for(int i = 0; i < 4; ++i) prop_joint_id_[i] = -1;  // disable all
+    }
   }
 
   std::string ns = body_name_;
@@ -346,6 +386,39 @@ void AcroMode::compute(const mjModel * m, mjData * d, int)
       if(id_tx_ != -1) d->ctrl[id_tx_] = tx_actual;
       if(id_ty_ != -1) d->ctrl[id_ty_] = ty_actual;
       if(id_tz_ != -1) d->ctrl[id_tz_] = tz_actual;
+
+      // ── Step 3e: Drive visual propeller joints ──
+      // Directly advance qpos (angle) of each propeller hinge by ω·dt.
+      // We also set qvel so MuJoCo's integrator keeps them spinning
+      // and apply a force via qfrc_applied to counteract damping/friction.
+      // Note: CW/CCW pairs cancel reaction torques on the drone body.
+      constexpr double IDLE_OMEGA = 800.0;  // rad/s (~7640 RPM) visual idle — always spinning
+      for(int i = 0; i < 4; ++i)
+      {
+        if(prop_joint_id_[i] >= 0)
+        {
+          // Always apply minimum visual idle speed regardless of thrust command
+          double omega_vis = std::max(motor_omega_(i), IDLE_OMEGA);
+
+          const double omega_signed = prop_spin_dir_[i] * omega_vis;
+          const int qpos_adr = m->jnt_qposadr[prop_joint_id_[i]];
+          const int qvel_adr = m->jnt_dofadr[prop_joint_id_[i]];
+
+          // Advance angle directly: θ += ω·Δt
+          d->qpos[qpos_adr] += omega_signed * sim_dt;
+
+          // Set velocity for consistent physics state
+          d->qvel[qvel_adr] = omega_signed;
+
+          // Apply torque to overcome any damping/friction in the joint
+          const double damping = m->dof_damping[qvel_adr];
+          const double frictionloss = m->dof_frictionloss[qvel_adr];
+          double compensate = damping * omega_signed;
+          if(omega_signed > 0) compensate += frictionloss;
+          else if(omega_signed < 0) compensate -= frictionloss;
+          d->qfrc_applied[qvel_adr] = compensate;
+        }
+      }
     }
 
     next_ctrl_time_ += ctrl_dt_;
