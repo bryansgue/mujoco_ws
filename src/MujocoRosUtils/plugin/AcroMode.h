@@ -11,6 +11,8 @@
 #include <eigen3/Eigen/Geometry>
 #include <memory>
 #include <std_srvs/srv/set_bool.hpp>
+#include <std_srvs/srv/trigger.hpp>
+#include <atomic>
 #include <string>
 
 namespace MujocoRosUtils
@@ -53,9 +55,11 @@ protected:
   void trpy_callback(const quadrotor_msgs::msg::TRPYCommand::SharedPtr msg);
   void trpy_payload_callback(const quadrotor_msgs::msg::TRPYCommand::SharedPtr msg);
 
-  // Service Callback
+  // Service Callbacks
   void activate_payload_callback(const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
                                  std::shared_ptr<std_srvs::srv::SetBool::Response> response);
+  void sim_reset_callback(const std::shared_ptr<std_srvs::srv::Trigger::Request> request,
+                          std::shared_ptr<std_srvs::srv::Trigger::Response> response);
 
   static Eigen::Matrix3d quatToRot(const Eigen::Vector4d & q_wxyz);
 
@@ -125,6 +129,8 @@ protected:
   rclcpp::Subscription<quadrotor_msgs::msg::TRPYCommand>::SharedPtr sub_trpy_cmd_;
   rclcpp::Subscription<quadrotor_msgs::msg::TRPYCommand>::SharedPtr sub_trpy_payload_cmd_;
   rclcpp::Service<std_srvs::srv::SetBool>::SharedPtr srv_activate_payload_;
+  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_sim_reset_;
+  std::atomic<bool> reset_requested_{false};
 };
 
 } // namespace MujocoRosUtils

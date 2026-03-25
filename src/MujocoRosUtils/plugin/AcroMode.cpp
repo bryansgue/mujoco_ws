@@ -249,11 +249,25 @@ AcroMode::AcroMode(const mjModel * m,
       service_name,
       std::bind(&AcroMode::activate_payload_callback, this, std::placeholders::_1, std::placeholders::_2));
 
+  // Reset service — /quadrotor/sim/reset  (std_srvs/Trigger)
+  srv_sim_reset_ = nh_->create_service<std_srvs::srv::Trigger>(
+      "sim/reset",
+      std::bind(&AcroMode::sim_reset_callback, this, std::placeholders::_1, std::placeholders::_2));
+
   executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
   executor_->add_node(nh_);
 }
 
 // ---------- Callbacks ----------
+
+void AcroMode::sim_reset_callback(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
+                                   std::shared_ptr<std_srvs::srv::Trigger::Response> response)
+{
+  reset_requested_.store(true);
+  response->success = true;
+  response->message = "Sim reset requested";
+  RCLCPP_INFO(nh_->get_logger(), "[AcroMode] sim/reset solicitado");
+}
 
 void AcroMode::activate_payload_callback(const std::shared_ptr<std_srvs::srv::SetBool::Request> request,
                                          std::shared_ptr<std_srvs::srv::SetBool::Response> response)
@@ -289,6 +303,18 @@ void AcroMode::trpy_payload_callback(const quadrotor_msgs::msg::TRPYCommand::Sha
 void AcroMode::compute(const mjModel * m, mjData * d, int)
 {
   if(executor_) executor_->spin_once(std::chrono::seconds(0));
+
+  // ── Handle sim reset ──
+  if(reset_requested_.exchange(false))
+  {
+    mj_resetData(m, d);
+    motor_omega_ = Eigen::Vector4d::Zero();
+    commanded_thrust_ = 0.0;
+    wd_ = Eigen::Vector3d::Zero();
+    next_ctrl_time_ = 0.0;
+    RCLCPP_INFO(nh_->get_logger(), "[AcroMode] Simulacion reseteada");
+    return;
+  }
 
   const double t = d->time;
   const double sim_dt = m->opt.timestep;
