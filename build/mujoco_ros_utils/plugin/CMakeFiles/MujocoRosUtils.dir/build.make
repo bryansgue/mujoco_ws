@@ -198,10 +198,24 @@ plugin/CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.s"
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ImuPublisher.cpp -o CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.s
 
+plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/flags.make
+plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o: /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.cpp
+plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o"
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o -MF CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o.d -o CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o -c /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.cpp
+
+plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.i"
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.cpp > CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.i
+
+plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.s"
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.cpp -o CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.s
+
 plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/flags.make
 plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o: /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/AcroMode.cpp
 plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o"
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o -MF CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o.d -o CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o -c /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/AcroMode.cpp
 
 plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.i: cmake_force
@@ -215,7 +229,7 @@ plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.s: cmake_force
 plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/flags.make
 plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o: /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/LowLevelMode.cpp
 plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o"
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o -MF CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o.d -o CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o -c /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/LowLevelMode.cpp
 
 plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.i: cmake_force
@@ -229,7 +243,7 @@ plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.s: cmake_force
 plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/flags.make
 plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o: /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/So3Mode.cpp
 plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o: plugin/CMakeFiles/MujocoRosUtils.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o"
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o -MF CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o.d -o CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o -c /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/So3Mode.cpp
 
 plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.i: cmake_force
@@ -251,6 +265,7 @@ MujocoRosUtils_OBJECTS = \
 "CMakeFiles/MujocoRosUtils.dir/WrenchToActuators.cpp.o" \
 "CMakeFiles/MujocoRosUtils.dir/OdometryPublisher.cpp.o" \
 "CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.o" \
+"CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o" \
 "CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o" \
 "CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o" \
 "CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o"
@@ -267,6 +282,7 @@ plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/SensorPublishe
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/WrenchToActuators.cpp.o
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/OdometryPublisher.cpp.o
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.o
+plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/LowLevelMode.cpp.o
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/So3Mode.cpp.o
@@ -408,7 +424,7 @@ plugin/libMujocoRosUtils.so: /opt/ros/humble/lib/librcpputils.so
 plugin/libMujocoRosUtils.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 plugin/libMujocoRosUtils.so: /opt/ros/humble/lib/librcutils.so
 plugin/libMujocoRosUtils.so: plugin/CMakeFiles/MujocoRosUtils.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libMujocoRosUtils.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library libMujocoRosUtils.so"
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils/plugin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MujocoRosUtils.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

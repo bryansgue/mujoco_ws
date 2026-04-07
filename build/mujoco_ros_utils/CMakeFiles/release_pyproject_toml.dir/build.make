@@ -70,7 +70,7 @@ include CMakeFiles/release_pyproject_toml.dir/compiler_depend.make
 include CMakeFiles/release_pyproject_toml.dir/progress.make
 
 CMakeFiles/release_pyproject_toml:
-	cd /home/bryansgue/uav_ws/src/MujocoRosUtils && echo Updating\ pyproject.toml\ to\ $$VERSION && /home/bryansgue/uav_ws/src/MujocoRosUtils/cmake/pyproject.py $$VERSION && if ! ( git diff --quiet pyproject.toml ) then ( /usr/bin/git add pyproject.toml && /usr/bin/git commit -m release:\ Update\ pyproject.toml\ version\ to\ $$VERSION && echo Updated\ pyproject.toml\ and\ committed ) fi
+	cd /home/bryansgue/uav_ws/src/MujocoRosUtils && echo Updating\ pyproject.toml\ to\ $$VERSION && /usr/bin/python3 /home/bryansgue/uav_ws/src/MujocoRosUtils/cmake/pyproject.py $$VERSION && if ! ( git diff --quiet pyproject.toml ) then ( /usr/bin/git add pyproject.toml && /usr/bin/git commit -m release:\ Update\ pyproject.toml\ version\ to\ $$VERSION && echo Updated\ pyproject.toml\ and\ committed ) fi
 
 release_pyproject_toml: CMakeFiles/release_pyproject_toml
 release_pyproject_toml: CMakeFiles/release_pyproject_toml.dir/build.make

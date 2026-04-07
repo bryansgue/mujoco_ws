@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MujocoRosUtils.dir/ActuatorCommand.cpp.o.d"
   "CMakeFiles/MujocoRosUtils.dir/ClockPublisher.cpp.o"
   "CMakeFiles/MujocoRosUtils.dir/ClockPublisher.cpp.o.d"
+  "CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o"
+  "CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o.d"
   "CMakeFiles/MujocoRosUtils.dir/ExternalForce.cpp.o"
   "CMakeFiles/MujocoRosUtils.dir/ExternalForce.cpp.o.d"
   "CMakeFiles/MujocoRosUtils.dir/ImagePublisher.cpp.o"

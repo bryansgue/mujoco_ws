@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Release")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -247,6 +247,11 @@ endif()
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/bryansgue/uav_ws/build/mujoco_ros_utils/mujoco_ros_utils__rs/cmake_install.cmake")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_cExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
@@ -261,8 +266,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_cExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_cExport-release.cmake")
   endif()
 endif()
 
@@ -280,8 +285,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cExport-release.cmake")
   endif()
 endif()
 
@@ -315,8 +320,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cppExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_typesupport_fastrtps_cppExport-release.cmake")
   endif()
 endif()
 
@@ -334,8 +339,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cExport-release.cmake")
   endif()
 endif()
 
@@ -353,8 +358,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cExport-release.cmake")
   endif()
 endif()
 
@@ -372,8 +377,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cppExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cppExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_introspection_cppExport-release.cmake")
   endif()
 endif()
 
@@ -391,8 +396,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cppExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cppExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/mujoco_ros_utils__rosidl_typesupport_cppExport-release.cmake")
   endif()
 endif()
 
@@ -410,8 +415,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_pyExport.cmake")
-  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_pyExport-noconfig.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mujoco_ros_utils/cmake" TYPE FILE FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles/Export/share/mujoco_ros_utils/cmake/export_mujoco_ros_utils__rosidl_generator_pyExport-release.cmake")
   endif()
 endif()
 

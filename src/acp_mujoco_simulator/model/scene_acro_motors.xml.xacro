@@ -21,6 +21,7 @@
     <plugin plugin="MujocoRosUtils::OdometryPublisher"/>
     <plugin plugin="MujocoRosUtils::SensorPublisher"/>
     <plugin plugin="MujocoRosUtils::ImuPublisher"/>
+    <plugin plugin="MujocoRosUtils::CollisionPublisher"/>
     <plugin plugin="MujocoRosUtils::AcroMode"/>
     <plugin plugin="MujocoRosUtils::LowLevelMode"/>
   </extension>
@@ -38,6 +39,12 @@
   <worldbody>
     <light pos="1 0 3.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+
+    <!-- Collision detector: publishes std_msgs/Bool on /quadrotor/collision -->
+    <plugin plugin="MujocoRosUtils::CollisionPublisher">
+      <config key="topic"        value="/quadrotor/collision"/>
+      <config key="publish_rate" value="100"/>
+    </plugin>
 
     <geom name="box_red"   type="box" pos="2  1  0.1" size="0.2 0.2 0.1" material="mat_red"   />
     <geom name="box_green" type="box" pos="4 -1  0.1" size="0.2 0.2 0.1" material="mat_green" />

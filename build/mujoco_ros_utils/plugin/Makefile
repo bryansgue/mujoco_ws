@@ -274,6 +274,30 @@ ClockPublisher.cpp.s:
 	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/ClockPublisher.cpp.s
 .PHONY : ClockPublisher.cpp.s
 
+CollisionPublisher.o: CollisionPublisher.cpp.o
+.PHONY : CollisionPublisher.o
+
+# target to build an object file
+CollisionPublisher.cpp.o:
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o
+.PHONY : CollisionPublisher.cpp.o
+
+CollisionPublisher.i: CollisionPublisher.cpp.i
+.PHONY : CollisionPublisher.i
+
+# target to preprocess a source file
+CollisionPublisher.cpp.i:
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.i
+.PHONY : CollisionPublisher.cpp.i
+
+CollisionPublisher.s: CollisionPublisher.cpp.s
+.PHONY : CollisionPublisher.s
+
+# target to generate assembly for a file
+CollisionPublisher.cpp.s:
+	cd /home/bryansgue/uav_ws/build/mujoco_ros_utils && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.s
+.PHONY : CollisionPublisher.cpp.s
+
 ExternalForce.o: ExternalForce.cpp.o
 .PHONY : ExternalForce.o
 
@@ -538,6 +562,9 @@ help:
 	@echo "... ClockPublisher.o"
 	@echo "... ClockPublisher.i"
 	@echo "... ClockPublisher.s"
+	@echo "... CollisionPublisher.o"
+	@echo "... CollisionPublisher.i"
+	@echo "... CollisionPublisher.s"
 	@echo "... ExternalForce.o"
 	@echo "... ExternalForce.i"
 	@echo "... ExternalForce.s"

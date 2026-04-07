@@ -17,9 +17,10 @@ import xacro
 
 # Mapa de nombre de escena → archivo xacro
 SCENES = {
-    "payload":   "scene_acro.xml.xacro",
-    "nopayload": "scene_acro_nopayload.xml.xacro",
-    "motors":    "scene_acro_motors.xml.xacro",
+    "payload":        "scene_acro.xml.xacro",
+    "nopayload":      "scene_acro_nopayload.xml.xacro",
+    "motors":         "scene_acro_motors.xml.xacro",
+    "motors_nowall":  "scene_acro_motors_nowall.xml.xacro",
 }
 
 

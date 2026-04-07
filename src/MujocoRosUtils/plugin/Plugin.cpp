@@ -3,6 +3,7 @@
 #include "AcroMode.h"
 #include "ActuatorCommand.h"
 #include "ClockPublisher.h"
+#include "CollisionPublisher.h"
 #include "ExternalForce.h"
 #include "ImagePublisher.h"
 #include "ImuPublisher.h"
@@ -27,6 +28,7 @@ mjPLUGIN_LIB_INIT
   WrenchToActuators::RegisterPlugin();
   OdometryPublisher::RegisterPlugin();
   ImuPublisher::RegisterPlugin();
+  CollisionPublisher::RegisterPlugin();
   AcroMode::RegisterPlugin();
   LowLevelMode::RegisterPlugin();
   So3Mode::RegisterPlugin();

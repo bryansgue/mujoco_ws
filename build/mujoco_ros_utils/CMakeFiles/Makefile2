@@ -80,12 +80,14 @@ all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/all
 all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/all
 all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/all
 all: mujoco_ros_utils__py/all
+all: mujoco_ros_utils__rs/all
 all: plugin/all
 all: xml/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: mujoco_ros_utils__py/preinstall
+preinstall: mujoco_ros_utils__rs/preinstall
 preinstall: plugin/preinstall
 preinstall: xml/preinstall
 .PHONY : preinstall
@@ -152,6 +154,7 @@ clean: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/cle
 clean: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/clean
 clean: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/clean
 clean: mujoco_ros_utils__py/clean
+clean: mujoco_ros_utils__rs/clean
 clean: plugin/clean
 clean: xml/clean
 .PHONY : clean
@@ -170,6 +173,21 @@ mujoco_ros_utils__py/preinstall:
 # Recursive "clean" directory target.
 mujoco_ros_utils__py/clean: mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/clean
 .PHONY : mujoco_ros_utils__py/clean
+
+#=============================================================================
+# Directory level rules for directory mujoco_ros_utils__rs
+
+# Recursive "all" directory target.
+mujoco_ros_utils__rs/all: mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/all
+.PHONY : mujoco_ros_utils__rs/all
+
+# Recursive "preinstall" directory target.
+mujoco_ros_utils__rs/preinstall:
+.PHONY : mujoco_ros_utils__rs/preinstall
+
+# Recursive "clean" directory target.
+mujoco_ros_utils__rs/clean: mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/clean
+.PHONY : mujoco_ros_utils__rs/clean
 
 #=============================================================================
 # Directory level rules for directory plugin
@@ -990,7 +1008,7 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/distdir.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distdir.dir/build.make CMakeFiles/distdir.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distdir.dir/build.make CMakeFiles/distdir.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=23 "Built target distdir"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=24 "Built target distdir"
 .PHONY : CMakeFiles/distdir.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1016,7 +1034,7 @@ CMakeFiles/distdir.dir/clean:
 CMakeFiles/dist_targz.dir/all: CMakeFiles/distdir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_targz.dir/build.make CMakeFiles/dist_targz.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_targz.dir/build.make CMakeFiles/dist_targz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=19 "Built target dist_targz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=20 "Built target dist_targz"
 .PHONY : CMakeFiles/dist_targz.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1042,7 +1060,7 @@ CMakeFiles/dist_targz.dir/clean:
 CMakeFiles/dist_tarbz2.dir/all: CMakeFiles/distdir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_tarbz2.dir/build.make CMakeFiles/dist_tarbz2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_tarbz2.dir/build.make CMakeFiles/dist_tarbz2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=18 "Built target dist_tarbz2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=19 "Built target dist_tarbz2"
 .PHONY : CMakeFiles/dist_tarbz2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1068,7 +1086,7 @@ CMakeFiles/dist_tarbz2.dir/clean:
 CMakeFiles/dist_tarxz.dir/all: CMakeFiles/distdir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_tarxz.dir/build.make CMakeFiles/dist_tarxz.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dist_tarxz.dir/build.make CMakeFiles/dist_tarxz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=20 "Built target dist_tarxz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=21 "Built target dist_tarxz"
 .PHONY : CMakeFiles/dist_tarxz.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1120,7 +1138,7 @@ CMakeFiles/dist.dir/clean:
 CMakeFiles/distclean.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distclean.dir/build.make CMakeFiles/distclean.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distclean.dir/build.make CMakeFiles/distclean.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=22 "Built target distclean"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=23 "Built target distclean"
 .PHONY : CMakeFiles/distclean.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1146,7 +1164,7 @@ CMakeFiles/distclean.dir/clean:
 CMakeFiles/distorig.dir/all: CMakeFiles/dist.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distorig.dir/build.make CMakeFiles/distorig.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distorig.dir/build.make CMakeFiles/distorig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=24 "Built target distorig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=25 "Built target distorig"
 .PHONY : CMakeFiles/distorig.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1172,7 +1190,7 @@ CMakeFiles/distorig.dir/clean:
 CMakeFiles/distcheck.dir/all: CMakeFiles/distdir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distcheck.dir/build.make CMakeFiles/distcheck.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/distcheck.dir/build.make CMakeFiles/distcheck.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=21 "Built target distcheck"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=22 "Built target distcheck"
 .PHONY : CMakeFiles/distcheck.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1276,7 +1294,7 @@ CMakeFiles/release.dir/clean:
 CMakeFiles/deb-src.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/deb-src.dir/build.make CMakeFiles/deb-src.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/deb-src.dir/build.make CMakeFiles/deb-src.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=17 "Built target deb-src"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=18 "Built target deb-src"
 .PHONY : CMakeFiles/deb-src.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1302,7 +1320,7 @@ CMakeFiles/deb-src.dir/clean:
 CMakeFiles/deb.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/deb.dir/build.make CMakeFiles/deb.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/deb.dir/build.make CMakeFiles/deb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=16 "Built target deb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=17 "Built target deb"
 .PHONY : CMakeFiles/deb.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1385,6 +1403,7 @@ CMakeFiles/mujoco_ros_utils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesup
 CMakeFiles/mujoco_ros_utils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/all
 CMakeFiles/mujoco_ros_utils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/all
 CMakeFiles/mujoco_ros_utils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/all
+CMakeFiles/mujoco_ros_utils.dir/all: mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils.dir/build.make CMakeFiles/mujoco_ros_utils.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils.dir/build.make CMakeFiles/mujoco_ros_utils.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num= "Built target mujoco_ros_utils"
@@ -1392,7 +1411,7 @@ CMakeFiles/mujoco_ros_utils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesup
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mujoco_ros_utils.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 30
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mujoco_ros_utils.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : CMakeFiles/mujoco_ros_utils.dir/rule
@@ -1413,7 +1432,7 @@ CMakeFiles/mujoco_ros_utils.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=27,28,29,30 "Built target mujoco_ros_utils__rosidl_generator_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=28,29,30,31 "Built target mujoco_ros_utils__rosidl_generator_c"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1439,7 +1458,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=44,45,46,47 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=45,46,47,48 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_c"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1465,7 +1484,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c.dir/clean:
 CMakeFiles/mujoco_ros_utils__cpp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__cpp.dir/build.make CMakeFiles/mujoco_ros_utils__cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__cpp.dir/build.make CMakeFiles/mujoco_ros_utils__cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=25 "Built target mujoco_ros_utils__cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=26 "Built target mujoco_ros_utils__cpp"
 .PHONY : CMakeFiles/mujoco_ros_utils__cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1491,7 +1510,7 @@ CMakeFiles/mujoco_ros_utils__cpp.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/all: CMakeFiles/mujoco_ros_utils__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=50,51,52,53 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=51,52,53,54 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1517,7 +1536,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_cpp.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=54,55,56,57 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=55,56,57,58 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_c"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1543,7 +1562,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=34,35,36,37 "Built target mujoco_ros_utils__rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=35,36,37,38 "Built target mujoco_ros_utils__rosidl_typesupport_c"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1569,7 +1588,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/all: CMakeFiles/mujoco_ros_utils__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=60,61,62,63 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=61,62,63,64 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_cpp"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1595,7 +1614,7 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_cpp.dir/clean:
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/all: CMakeFiles/mujoco_ros_utils__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=40,41,42,43 "Built target mujoco_ros_utils__rosidl_typesupport_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=41,42,43,44 "Built target mujoco_ros_utils__rosidl_typesupport_cpp"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1675,12 +1694,12 @@ CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/all: CMakeFiles/mujoco_ros_
 CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/all: mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=31,32,33 "Built target mujoco_ros_utils__rosidl_generator_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=32,33,34 "Built target mujoco_ros_utils__rosidl_generator_py"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 33
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_generator_py.dir/rule
@@ -1705,12 +1724,12 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/all: CMake
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/all: mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=48,49 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=49,50 "Built target mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_fastrtps_c__pyext.dir/rule
@@ -1735,12 +1754,12 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/all: 
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/all: mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=58,59 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=59,60 "Built target mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_introspection_c__pyext.dir/rule
@@ -1764,12 +1783,12 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/all: CMakeFiles/muj
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/all: mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=38,39 "Built target mujoco_ros_utils__rosidl_typesupport_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=39,40 "Built target mujoco_ros_utils__rosidl_typesupport_c__pyext"
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/rule
@@ -1790,12 +1809,12 @@ CMakeFiles/mujoco_ros_utils__rosidl_typesupport_c__pyext.dir/clean:
 mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all: CMakeFiles/mujoco_ros_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/build.make mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/depend
 	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/build.make mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=26 "Built target mujoco_ros_utils__py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=27 "Built target mujoco_ros_utils__py"
 .PHONY : mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 
 # Build rule for subdir invocation for target.
 mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/rule
@@ -1810,6 +1829,32 @@ mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/clean:
 .PHONY : mujoco_ros_utils__py/CMakeFiles/mujoco_ros_utils__py.dir/clean
 
 #=============================================================================
+# Target rules for target mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir
+
+# All Build rule for target.
+mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/all:
+	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build.make mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/depend
+	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build.make mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=65 "Built target mujoco_ros_utils__rs"
+.PHONY : mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/all
+
+# Build rule for subdir invocation for target.
+mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
+.PHONY : mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/rule
+
+# Convenience name for target.
+mujoco_ros_utils__rs: mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/rule
+.PHONY : mujoco_ros_utils__rs
+
+# clean rule for target.
+mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build.make mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/clean
+.PHONY : mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/clean
+
+#=============================================================================
 # Target rules for target plugin/CMakeFiles/MujocoRosUtils.dir
 
 # All Build rule for target.
@@ -1818,12 +1863,12 @@ plugin/CMakeFiles/MujocoRosUtils.dir/all: CMakeFiles/mujoco_ros_utils__cpp.dir/a
 plugin/CMakeFiles/MujocoRosUtils.dir/all: CMakeFiles/mujoco_ros_utils__rosidl_typesupport_cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/depend
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtils.dir/build.make plugin/CMakeFiles/MujocoRosUtils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target MujocoRosUtils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target MujocoRosUtils"
 .PHONY : plugin/CMakeFiles/MujocoRosUtils.dir/all
 
 # Build rule for subdir invocation for target.
 plugin/CMakeFiles/MujocoRosUtils.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/MujocoRosUtils.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : plugin/CMakeFiles/MujocoRosUtils.dir/rule
@@ -1846,12 +1891,12 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/all: CMakeFiles/mujoco_ros_utils__ros
 plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/all: plugin/CMakeFiles/MujocoRosUtils.dir/all
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/build.make plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/build.make plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=14,15 "Built target MujocoRosUtilsPlugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles --progress-num=15,16 "Built target MujocoRosUtilsPlugin"
 .PHONY : plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/all
 
 # Build rule for subdir invocation for target.
 plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 44
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 46
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryansgue/uav_ws/build/mujoco_ros_utils/CMakeFiles 0
 .PHONY : plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/rule

@@ -1,7 +1,8 @@
 add_library(
   MujocoRosUtils SHARED
   ClockPublisher.cpp PosePublisher.cpp ImagePublisher.cpp ActuatorCommand.cpp
-  ExternalForce.cpp SensorPublisher.cpp WrenchToActuators.cpp OdometryPublisher.cpp ImuPublisher.cpp AcroMode.cpp LowLevelMode.cpp So3Mode.cpp)
+  ExternalForce.cpp SensorPublisher.cpp WrenchToActuators.cpp OdometryPublisher.cpp ImuPublisher.cpp
+  CollisionPublisher.cpp AcroMode.cpp LowLevelMode.cpp So3Mode.cpp)
 target_include_directories(
   MujocoRosUtils PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                         $<INSTALL_INTERFACE:include>)

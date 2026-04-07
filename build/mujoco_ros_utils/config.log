@@ -15,7 +15,10 @@ generator = Unix Makefiles
 
 PATH /home/bryansgue/Applications
 PATH /home/bryansgue/.local/bin
+PATH /home/bryansgue/.config/Code/User/globalStorage/github.copilot-chat/debugCommand
+PATH /home/bryansgue/.config/Code/User/globalStorage/github.copilot-chat/copilotCli
 PATH /home/bryansgue/.local/bin
+PATH /home/bryansgue/uav_ws/install/drone_teleop/bin
 PATH /home/bryansgue/acp_ws/install/nmpc_payload_cpp/bin
 PATH /opt/ros/humble/bin
 PATH /home/bryansgue/Applications
@@ -32,8 +35,10 @@ PATH /usr/games
 PATH /usr/local/games
 PATH /snap/bin
 PATH /snap/bin
-PATH /home/bryansgue/.config/Code/User/globalStorage/github.copilot-chat/debugCommand
+PATH /home/bryansgue/uav_ws/install/drone_teleop/bin
+PATH /home/bryansgue/uav_ws/install/drone_teleop/bin
 
+PKG_CONFIG_PATH /home/bryansgue/uav_ws/install/mujoco_ros_utils/lib/pkgconfig
 PKG_CONFIG_PATH /home/bryansgue/acp_ws/install/mujoco_ros_utils/lib/pkgconfig
 
 ## ---------------- ##
@@ -57,9 +62,9 @@ CMAKE_BINARY_DIR = /home/bryansgue/uav_ws/build/mujoco_ros_utils
 
 CMAKE_AR = /usr/bin/ar
 CMAKE_RANLIB = /usr/bin/ranlib
-CMAKE_BUILD_TYPE = 
+CMAKE_BUILD_TYPE = Release
 CMAKE_CONFIGURATION_TYPES = 
-CMAKE_SHARED_LINKER_FLAGS = 
+CMAKE_SHARED_LINKER_FLAGS =  -Wl,--no-undefined
 
 CMAKE_C_COMPILER = /usr/bin/cc
 CMAKE_C_FLAGS = 

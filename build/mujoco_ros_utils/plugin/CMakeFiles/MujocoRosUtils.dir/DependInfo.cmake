@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/AcroMode.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/AcroMode.cpp.o.d"
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ActuatorCommand.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/ActuatorCommand.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/ActuatorCommand.cpp.o.d"
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ClockPublisher.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/ClockPublisher.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/ClockPublisher.cpp.o.d"
+  "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/CollisionPublisher.cpp.o.d"
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ExternalForce.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/ExternalForce.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/ExternalForce.cpp.o.d"
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ImagePublisher.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/ImagePublisher.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/ImagePublisher.cpp.o.d"
   "/home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ImuPublisher.cpp" "plugin/CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.o" "gcc" "plugin/CMakeFiles/MujocoRosUtils.dir/ImuPublisher.cpp.o.d"

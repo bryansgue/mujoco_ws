@@ -968,6 +968,19 @@ mujoco_ros_utils__py/fast:
 .PHONY : mujoco_ros_utils__py/fast
 
 #=============================================================================
+# Target rules for targets named mujoco_ros_utils__rs
+
+# Build rule for target.
+mujoco_ros_utils__rs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mujoco_ros_utils__rs
+.PHONY : mujoco_ros_utils__rs
+
+# fast build rule for target.
+mujoco_ros_utils__rs/fast:
+	$(MAKE) $(MAKESILENT) -f mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build.make mujoco_ros_utils__rs/CMakeFiles/mujoco_ros_utils__rs.dir/build
+.PHONY : mujoco_ros_utils__rs/fast
+
+#=============================================================================
 # Target rules for targets named MujocoRosUtils
 
 # Build rule for target.
@@ -1506,6 +1519,7 @@ help:
 	@echo "... mujoco_ros_utils"
 	@echo "... mujoco_ros_utils__cpp"
 	@echo "... mujoco_ros_utils__py"
+	@echo "... mujoco_ros_utils__rs"
 	@echo "... reinstall"
 	@echo "... release"
 	@echo "... release_package_xml"

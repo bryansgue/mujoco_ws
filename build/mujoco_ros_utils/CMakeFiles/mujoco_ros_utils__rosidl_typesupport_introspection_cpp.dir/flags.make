@@ -6,5 +6,5 @@ CXX_DEFINES = -DRCUTILS_ENABLE_FAULT_INJECTION -DROSIDL_TYPESUPPORT_INTROSPECTIO
 
 CXX_INCLUDES = -I/home/bryansgue/uav_ws/build/mujoco_ros_utils -I/home/bryansgue/uav_ws/build/mujoco_ros_utils/include -I/home/bryansgue/uav_ws/src/MujocoRosUtils/include -I/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_typesupport_introspection_cpp -I/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_generator_cpp -isystem /opt/ros/humble/include/std_msgs -isystem /opt/ros/humble/include/builtin_interfaces -isystem /opt/ros/humble/include/rosidl_runtime_cpp -isystem /opt/ros/humble/include/rosidl_runtime_c -isystem /opt/ros/humble/include/rcutils -isystem /opt/ros/humble/include/rosidl_typesupport_interface -isystem /opt/ros/humble/include/geometry_msgs -isystem /home/bryansgue/uav_ws/install/quadrotor_msgs/include/quadrotor_msgs -isystem /opt/ros/humble/include/nav_msgs -isystem /opt/ros/humble/include/std_srvs -isystem /opt/ros/humble/include/rosidl_typesupport_introspection_cpp -isystem /opt/ros/humble/include/rosidl_typesupport_introspection_c
 
-CXX_FLAGS =  -pedantic -Wno-long-long -Wall -Wextra -Wcast-align -Wcast-qual -Wformat -Wwrite-strings -Wconversion  -fPIC -Wall -Wextra -Wpedantic
+CXX_FLAGS =  -pedantic -Wno-long-long -Wall -Wextra -Wcast-align -Wcast-qual -Wformat -Wwrite-strings -Wconversion  -O3 -DNDEBUG -fPIC -Wall -Wextra -Wpedantic
 

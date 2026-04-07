@@ -363,6 +363,12 @@ include("/home/bryansgue/uav_ws/build/mujoco_ros_utils/ament_cmake_symlink_insta
 # install("TARGETS" "mujoco_ros_utils__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/mujoco_ros_utils")
 include("/home/bryansgue/uav_ws/build/mujoco_ros_utils/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
+# install(FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/ament_cmake_index/share/ament_index/resource_index/rust_packages/mujoco_ros_utils" "DESTINATION" "share/ament_index/resource_index/rust_packages")
+ament_cmake_symlink_install_files("/home/bryansgue/uav_ws/src/MujocoRosUtils" FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/ament_cmake_index/share/ament_index/resource_index/rust_packages/mujoco_ros_utils" "DESTINATION" "share/ament_index/resource_index/rust_packages")
+
+# install(DIRECTORY "/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_generator_rs/mujoco_ros_utils/rust" "DESTINATION" "share/mujoco_ros_utils")
+ament_cmake_symlink_install_directory("/home/bryansgue/uav_ws/src/MujocoRosUtils" DIRECTORY "/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_generator_rs/mujoco_ros_utils/rust" "DESTINATION" "share/mujoco_ros_utils")
+
 # install(FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_adapter/mujoco_ros_utils/msg/ExternalForce.idl" "DESTINATION" "share/mujoco_ros_utils/msg")
 ament_cmake_symlink_install_files("/home/bryansgue/uav_ws/src/MujocoRosUtils" FILES "/home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_adapter/mujoco_ros_utils/msg/ExternalForce.idl" "DESTINATION" "share/mujoco_ros_utils/msg")
 

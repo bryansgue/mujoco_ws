@@ -70,7 +70,7 @@ include CMakeFiles/reinstall.dir/compiler_depend.make
 include CMakeFiles/reinstall.dir/progress.make
 
 CMakeFiles/reinstall:
-	/usr/bin/cmake -P /home/bryansgue/uav_ws/build/mujoco_ros_utils/cmake//cmake_reinstall.cmake
+	/usr/bin/cmake -P /home/bryansgue/uav_ws/build/mujoco_ros_utils/cmake/Release/cmake_reinstall.cmake
 
 reinstall: CMakeFiles/reinstall
 reinstall: CMakeFiles/reinstall.dir/build.make

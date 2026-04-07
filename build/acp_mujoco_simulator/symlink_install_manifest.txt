@@ -81,6 +81,7 @@
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_acro.xml.xacro
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_acro_humanoid.xml.xacro
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_acro_motors.xml.xacro
+/home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_acro_motors_nowall.xml.xacro
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_acro_nopayload.xml.xacro
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_lowlevel.xml.xacro
 /home/bryansgue/uav_ws/install/acp_mujoco_simulator/share/acp_mujoco_simulator/model/scene_so3.xml.xacro

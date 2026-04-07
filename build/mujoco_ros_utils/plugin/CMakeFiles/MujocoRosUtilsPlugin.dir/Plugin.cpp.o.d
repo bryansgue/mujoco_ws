@@ -57,6 +57,7 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
  /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
@@ -119,16 +120,20 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/c++/11/cerrno /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -250,6 +255,7 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
@@ -303,6 +309,8 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /opt/ros/humble/include/rcutils/rcutils/error_handling.h \
  /usr/include/c++/11/stdlib.h /usr/include/string.h \
  /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
  /opt/ros/humble/include/rcutils/rcutils/time.h \
  /opt/ros/humble/include/rcutils/rcutils/types.h \
@@ -851,6 +859,11 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/set_bool__traits.hpp \
  /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/set_bool__type_support.hpp \
  /opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp \
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp \
+ /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp \
  /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ActuatorCommand.h \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp \
@@ -865,6 +878,12 @@ plugin/CMakeFiles/MujocoRosUtilsPlugin.dir/Plugin.cpp.o: \
  /opt/ros/humble/include/rosgraph_msgs/rosgraph_msgs/msg/detail/clock__traits.hpp \
  /opt/ros/humble/include/rosgraph_msgs/rosgraph_msgs/msg/detail/clock__type_support.hpp \
  /opt/ros/humble/include/rosgraph_msgs/rosgraph_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/CollisionPublisher.h \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/bool.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp \
  /home/bryansgue/uav_ws/src/MujocoRosUtils/plugin/ExternalForce.h \
  /home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_generator_cpp/mujoco_ros_utils/msg/external_force.hpp \
  /home/bryansgue/uav_ws/build/mujoco_ros_utils/rosidl_generator_cpp/mujoco_ros_utils/msg/detail/external_force__struct.hpp \

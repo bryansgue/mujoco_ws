@@ -5,5 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("mujoco_ros_utils__py")
+subdirs("mujoco_ros_utils__rs")
 subdirs("plugin")
 subdirs("xml")
