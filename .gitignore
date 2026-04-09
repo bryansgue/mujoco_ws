@@ -4,4 +4,3 @@ log/
 __pycache__/
 *.pyc
 *.egg-info/
-mujoco-3.4.0/
