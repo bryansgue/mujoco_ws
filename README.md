@@ -266,7 +266,7 @@ ros2 launch drone_teleop mujoco_only.launch.py scene:=<ESCENA>
 | `nopayload` | `ros2 launch drone_teleop mujoco_only.launch.py scene:=nopayload` | Drone libre sin carga ni cable, paredes |
 | `motors` | `ros2 launch drone_teleop mujoco_only.launch.py scene:=motors` | Drone con modelo de motores realista (gemelo digital), paredes |
 | `motors_nowall` | `ros2 launch drone_teleop mujoco_only.launch.py scene:=motors_nowall` | Drone con modelo de motores realista, sin paredes |
-| `gates` | `ros2 launch drone_teleop mujoco_only.launch.py scene:=gates` | Drone con motores + circuito de 8 gates de carrera (sin colisión, atravesables), con paredes |
+| `gates` | `ros2 launch drone_teleop mujoco_only.launch.py scene:=gates` | Drone con motores + circuito de 8 race gates + paredes. Gates atravesables por default (`gates_collide:=false`). Solo cámara `cinematic` (chase trackcom) |
 
 #### Diferencia entre modos SIN y CON modelo de motores
 
@@ -298,6 +298,15 @@ ros2 launch drone_teleop mujoco_only.launch.py scene:=<ESCENA>
 | `init_y` | `0.0` | Posicion inicial Y [m] |
 | `init_z` | `0.02` | Posicion inicial Z [m] |
 | `init_yaw` | `0.0` | Yaw inicial [rad] |
+| `gates_collide` | `false` | Solo escena `gates`. Si `true`, gates tienen colisión (drone choca contra ellos) |
+| `wind` | `false` | Activa nodo `wind_publisher` con perturbación aerodinámica |
+| `turbulence` | `moderate` | Nivel turbulencia: `light` / `moderate` / `severe` |
+| `mean_wind_speed` | `1.5` | Velocidad media viento [m/s] |
+| `wind_seed` | `-1` | Semilla RNG (`-1` aleatoria, ≥0 reproducible) |
+
+**Cámaras** (cycle con `[` / `]` en viewer MuJoCo):
+- `camera_pov` — vista fija (escenas `payload`, `nopayload`, `motors`, `motors_nowall`)
+- `cinematic` — `trackcom` que sigue posición del drone sin rotar con él. Única cámara en escena `gates`
 
 Ejemplo con argumentos:
 ```bash
@@ -608,8 +617,11 @@ ros2 launch drone_teleop mujoco_only.launch.py scene:=motors
 # motors_nowall: motores sin paredes
 ros2 launch drone_teleop mujoco_only.launch.py scene:=motors_nowall
 
-# gates: motores + 8 gates de carrera (atravesables)
+# gates: motores + 8 race gates (atravesables por default)
 ros2 launch drone_teleop mujoco_only.launch.py scene:=gates
+
+# gates con colisión activa (drone choca contra los aros):
+ros2 launch drone_teleop mujoco_only.launch.py scene:=gates gates_collide:=true
 
 # Con pose inicial:
 ros2 launch drone_teleop mujoco_only.launch.py scene:=gates init_x:=0.0 init_y:=0.0 init_z:=1.0 init_yaw:=0.0
