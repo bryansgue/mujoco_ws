@@ -20,6 +20,7 @@ setup(
         'console_scripts': [
             'teleop = drone_teleop.teleop:main',
             'wind_publisher = drone_teleop.wind_publisher:main',
+            'headless_runner = drone_teleop.headless_runner:main',
         ],
     },
 )

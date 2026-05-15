@@ -47,3 +47,15 @@ install(
   LIBRARY DESTINATION ${MUJOCO_BIN_DIR}/mujoco_plugin
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+
+add_executable(headless_runner headless_runner.cpp)
+target_include_directories(headless_runner PRIVATE ${MUJOCO_INCLUDE_DIR})
+target_link_libraries(headless_runner PRIVATE ${LIB_MUJOCO})
+set_target_properties(
+  headless_runner
+  PROPERTIES
+  SKIP_BUILD_RPATH FALSE
+  BUILD_WITH_INSTALL_RPATH TRUE
+  INSTALL_RPATH "${MUJOCO_LIB_DIR}:${MUJOCO_BIN_DIR}"
+)
+install(TARGETS headless_runner RUNTIME DESTINATION lib/${PROJECT_NAME})
