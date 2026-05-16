@@ -11,3 +11,4 @@ __pycache__/
 # MuJoCo runtime / locally compiled plugins
 mujoco-3.4.0/bin/MUJOCO_LOG.TXT
 mujoco-3.4.0/bin/mujoco_plugin/libMujocoRosUtils.so
+MUJOCO_LOG.TXT
