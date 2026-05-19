@@ -13,7 +13,13 @@ set -e
 WS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MUJOCO_DIR="${WS_DIR}/mujoco-3.4.0"
 MUJOCO_VERSION="3.4.0"
-MUJOCO_TARBALL="mujoco-${MUJOCO_VERSION}-linux-x86_64.tar.gz"
+ARCH="$(uname -m)"
+case "${ARCH}" in
+    x86_64)  MUJOCO_ARCH="x86_64" ;;
+    aarch64) MUJOCO_ARCH="aarch64" ;;
+    *) echo "❌ Arquitectura no soportada: ${ARCH}"; exit 1 ;;
+esac
+MUJOCO_TARBALL="mujoco-${MUJOCO_VERSION}-linux-${MUJOCO_ARCH}.tar.gz"
 MUJOCO_URL="https://github.com/google-deepmind/mujoco/releases/download/${MUJOCO_VERSION}/${MUJOCO_TARBALL}"
 
 echo "╔═══════════════════════════════════════════╗"
