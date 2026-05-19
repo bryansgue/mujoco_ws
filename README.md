@@ -4,22 +4,29 @@ Simulador de quadrotor (MuJoCo 3.4.0 + ROS2 Humble) para investigación de contr
 
 ---
 
-## Compilar
+## Instalación rápida (PC nueva / servidor)
+
+Prerequisitos: ROS2 Humble, `colcon`, `python3-xacro`, `python3-rosdep`, `libglfw3`, `libgl1`.
 
 ```bash
-cd /home/bryansgue/uav_ws
+git clone <repo-url> mujoco_ws
+cd mujoco_ws
+./setup.sh         # Descarga MuJoCo 3.4.0, compila, inyecta aliases en ~/.bashrc
+source ~/.bashrc
+```
+
+`setup.sh` es idempotente: vuelve a correrlo cuando quieras.
+
+## Compilar manualmente
+
+```bash
+cd ~/mujoco_ws
 source /opt/ros/humble/setup.bash
-export COLCON_UAV_WS_DIR=/home/bryansgue/uav_ws
-colcon build --symlink-install --cmake-args -DMUJOCO_ROOT_DIR=/home/bryansgue/uav_ws/mujoco-3.4.0
+colcon build --symlink-install --cmake-args -DMUJOCO_ROOT_DIR=$PWD/mujoco-3.4.0
 source install/setup.bash
 ```
 
-Cada terminal nueva:
-```bash
-cd /home/bryansgue/uav_ws
-source install/setup.bash
-export COLCON_UAV_WS_DIR=/home/bryansgue/uav_ws
-```
+Los launch files auto-detectan la raíz del workspace. La variable `COLCON_UAV_WS_DIR` queda como override opcional.
 
 ---
 
@@ -168,24 +175,23 @@ SIMULACIÓN:
 
 ---
 
-## Aliases recomendados (`~/.bashrc`)
+## Aliases (auto-instalados por `./setup.sh`)
 
-Para replicar el setup en una PC nueva, añadir al `~/.bashrc`:
+`setup.sh` inyecta en `~/.bashrc` un bloque marcado con `# >>> mujoco_ws aliases >>>` que define:
 
 ```bash
-# --- UAV workspace ---
-export COLCON_UAV_WS_DIR=~/uav_ws
-source ~/uav_ws/install/setup.bash
-export PATH="$PATH:$HOME/uav_ws/install/drone_teleop/bin"
+export COLCON_UAV_WS_DIR=~/mujoco_ws
+source ~/mujoco_ws/install/setup.bash
+export PATH="$PATH:$HOME/mujoco_ws/install/drone_teleop/bin"
 
-# Reset del drone en MuJoCo
 dronreset() { ros2 service call "/${1:-quadrotor}/sim/reset" std_srvs/srv/Trigger '{}' | tail -2; }
-
-# Launches del simulador (arg posicional = quad_name, default: quadrotor)
 sim_gate_collideron()  { ros2 launch drone_teleop mujoco_only.launch.py     scene:=gates gates_collide:=on  quad_name:="${1:-quadrotor}"; }
 sim_gate_collideroff() { ros2 launch drone_teleop mujoco_headless.launch.py scene:=gates gates_collide:=off realtime:=true quad_name:="${1:-quadrotor}"; }
+```
 
-# Experimentos de control (requiere paquete `quadrotor_mpc` separado)
+Aliases extra (control MPC, paquete externo `quadrotor_mpc`), añadir manualmente si los usas:
+
+```bash
 mpcc()    { ros2 launch quadrotor_mpc experiment.launch.py ctrl:=mpcc        manual_gains:=true quad_name:="${1:-quadrotor}"; }
 dq_mpcc() { ros2 launch quadrotor_mpc experiment.launch.py ctrl:=dq_ablation manual_gains:=true quad_name:="${1:-quadrotor}"; }
 ```

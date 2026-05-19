@@ -18,13 +18,13 @@ Workspace ROS 2 (Humble) para simulación de quadrotor con **MuJoCo 3.4.0**, con
 ## 🔧 Requisitos previos
 
 - ROS 2 Humble
-- MuJoCo 3.4.0 descomprimido en `~/uav_ws/mujoco-3.4.0`
+- MuJoCo 3.4.0 descomprimido en `~/mujoco_ws/mujoco-3.4.0`
 - Variable de entorno `COLCON_UAV_WS_DIR` apuntando al workspace
 
 Agrega esto a tu `~/.bashrc`:
 
 ```bash
-export COLCON_UAV_WS_DIR=/home/$USER/uav_ws
+export COLCON_UAV_WS_DIR=/home/$USER/mujoco_ws
 source /opt/ros/humble/setup.bash
 source $COLCON_UAV_WS_DIR/install/setup.bash
 ```
@@ -34,7 +34,7 @@ source $COLCON_UAV_WS_DIR/install/setup.bash
 ## 🏗️ Compilar
 
 ```bash
-cd ~/uav_ws
+cd ~/mujoco_ws
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install --cmake-args -DMUJOCO_ROOT_DIR=$COLCON_UAV_WS_DIR/mujoco-3.4.0
 ```
@@ -55,7 +55,7 @@ colcon build --symlink-install --packages-select mujoco_ros_utils \
 ### Terminal 1 — MuJoCo + ROS 2
 
 ```bash
-source ~/uav_ws/install/setup.bash
+source ~/mujoco_ws/install/setup.bash
 mujoco_launch.sh scene:=motors
 ```
 
@@ -96,7 +96,7 @@ ros2 launch drone_teleop mujoco_only.launch.py \
 ### Terminal 2 — Teleoperación interactiva
 
 ```bash
-source ~/uav_ws/install/setup.bash
+source ~/mujoco_ws/install/setup.bash
 ros2 run drone_teleop teleop
 ```
 
@@ -291,7 +291,7 @@ pub.publish(msg)
 ## 🗂️ Estructura de archivos relevantes
 
 ```
-uav_ws/src/
+mujoco_ws/src/
 ├── README.md                          ← Este archivo
 │
 ├── drone_teleop/
@@ -404,7 +404,7 @@ Con los valores por defecto:
 | Problema | Solución |
 |---|---|
 | `COLCON_UAV_WS_DIR no esta seteado` | Exportar la variable en `~/.bashrc` y hacer `source ~/.bashrc` |
-| `MuJoCo no encontrado en: .../bin/simulate` | Verificar que `mujoco-3.4.0` está en `~/uav_ws/` |
+| `MuJoCo no encontrado en: .../bin/simulate` | Verificar que `mujoco-3.4.0` está en `~/mujoco_ws/` |
 | `No se recibió /quadrotor/odom` | Lanzar primero el simulador en Terminal 1 antes del teleop |
 | `CMake Error: Invalid value used with --config` | Error inofensivo del cmake de MujocoRosUtils, ignorar |
 | Drone inestable al despegar | Reducir `Kp_z` o aumentar `Kd_z` en `teleop.py` |

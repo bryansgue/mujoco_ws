@@ -13,7 +13,7 @@ description: >
 
 ## Contexto del workspace
 
-**Ruta:** `/home/bryansgue/uav_ws/src/`
+**Ruta:** `/home/bryansgue/mujoco_ws/src/`
 
 Paquetes clave:
 - `MujocoRosUtils/plugin/` — plugins C++ del simulador (AcroMode, LowLevelMode, WrenchToActuators, OdometryPublisher, ImuPublisher)

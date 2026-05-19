@@ -8,10 +8,10 @@ Solo 4 paquetes: `drone_teleop`, `acp_mujoco_simulator`, `MujocoRosUtils`, `quad
 ## Compilar
 
 ```bash
-cd /home/bryansgue/uav_ws
+cd /home/bryansgue/mujoco_ws
 source /opt/ros/humble/setup.bash
-export COLCON_UAV_WS_DIR=/home/bryansgue/uav_ws
-colcon build --symlink-install --cmake-args -DMUJOCO_ROOT_DIR=/home/bryansgue/uav_ws/mujoco-3.4.0
+export COLCON_UAV_WS_DIR=/home/bryansgue/mujoco_ws
+colcon build --symlink-install --cmake-args -DMUJOCO_ROOT_DIR=/home/bryansgue/mujoco_ws/mujoco-3.4.0
 source install/setup.bash
 ```
 
@@ -19,9 +19,9 @@ source install/setup.bash
 
 En cada terminal nueva:
 ```bash
-cd /home/bryansgue/uav_ws
+cd /home/bryansgue/mujoco_ws
 source install/setup.bash
-export COLCON_UAV_WS_DIR=/home/bryansgue/uav_ws
+export COLCON_UAV_WS_DIR=/home/bryansgue/mujoco_ws
 ```
 
 ### Lanzar MuJoCo (Terminal 1)

@@ -28,13 +28,17 @@ SCENES = {
 
 def mujoco_setup(context, *args, **kwargs):
     pkg_share = get_package_share_directory("acp_mujoco_simulator")
-    colcon_ws_dir = os.environ.get("COLCON_UAV_WS_DIR", "")
-    if not colcon_ws_dir:
-        raise RuntimeError("COLCON_UAV_WS_DIR no esta seteado!")
+    # Auto-detect ws root: <ws>/install/<pkg>/share/<pkg> -> <ws>. Env var overrides.
+    colcon_ws_dir = os.environ.get("COLCON_UAV_WS_DIR") or \
+        os.path.abspath(os.path.join(pkg_share, "..", "..", "..", ".."))
 
     mujoco_bin = os.path.join(colcon_ws_dir, "mujoco-3.4.0", "bin", "simulate")
     if not os.path.isfile(mujoco_bin):
-        raise RuntimeError(f"MuJoCo no encontrado en: {mujoco_bin}")
+        raise RuntimeError(
+            f"MuJoCo no encontrado en: {mujoco_bin}\n"
+            f"Workspace detectado: {colcon_ws_dir}\n"
+            f"Correr ./setup.sh para descargar MuJoCo."
+        )
 
     quad_name = LaunchConfiguration("quad_name").perform(context)
     init_x    = LaunchConfiguration("init_x").perform(context)

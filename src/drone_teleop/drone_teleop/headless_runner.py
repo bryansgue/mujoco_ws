@@ -21,8 +21,13 @@ def main():
                    help="Sleep to match wall clock (default: fast-forward)")
     args = p.parse_args()
 
-    ws = os.environ.get("COLCON_UAV_WS_DIR", "/home/bryansgue/uav_ws")
-    plugin_dir = args.plugin_dir or os.path.join(ws, "mujoco-3.4.0", "bin", "mujoco_plugin")
+    # Auto-detect ws from AMENT_PREFIX_PATH (install/<pkg> -> ws root). Env var overrides.
+    ws = os.environ.get("COLCON_UAV_WS_DIR")
+    if not ws:
+        ament = os.environ.get("AMENT_PREFIX_PATH", "").split(":")[0]
+        if ament:
+            ws = os.path.abspath(os.path.join(ament, "..", ".."))
+    plugin_dir = args.plugin_dir or os.path.join(ws or "", "mujoco-3.4.0", "bin", "mujoco_plugin")
 
     if os.path.isdir(plugin_dir):
         mujoco.mj_loadAllPluginLibraries(plugin_dir)

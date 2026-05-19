@@ -23,9 +23,9 @@ SCENES = {
 
 def mujoco_setup(context, *args, **kwargs):
     pkg_share = get_package_share_directory("acp_mujoco_simulator")
-    colcon_ws_dir = os.environ.get("COLCON_UAV_WS_DIR", "")
-    if not colcon_ws_dir:
-        raise RuntimeError("COLCON_UAV_WS_DIR no esta seteado!")
+    # Auto-detect ws root: <ws>/install/<pkg>/share/<pkg> -> <ws>. Env var overrides.
+    colcon_ws_dir = os.environ.get("COLCON_UAV_WS_DIR") or \
+        os.path.abspath(os.path.join(pkg_share, "..", "..", "..", ".."))
 
     quad_name = LaunchConfiguration("quad_name").perform(context)
     init_x    = LaunchConfiguration("init_x").perform(context)
