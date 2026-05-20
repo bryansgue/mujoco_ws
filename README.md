@@ -50,7 +50,7 @@ Diferencia clave:
 
 ### Con interfaz gráfica
 ```bash
-ros2 launch drone_teleop mujoco_only.launch.py scene:=<ESCENA>
+ros2 launch drone_teleop mujoco_only.launch.py scene:=gates gates_collide:=on  quad_name:=eagle4
 ```
 
 ### Headless (sin GUI — entrenamiento / hardware prep / CI)
@@ -188,15 +188,6 @@ dronreset() { ros2 service call "/${1:-quadrotor}/sim/reset" std_srvs/srv/Trigge
 sim_gate_collideron()  { ros2 launch drone_teleop mujoco_only.launch.py     scene:=gates gates_collide:=on  quad_name:="${1:-quadrotor}"; }
 sim_gate_collideroff() { ros2 launch drone_teleop mujoco_headless.launch.py scene:=gates gates_collide:=off realtime:=true quad_name:="${1:-quadrotor}"; }
 ```
-
-Aliases extra (control MPC, paquete externo `quadrotor_mpc`), añadir manualmente si los usas:
-
-```bash
-mpcc()    { ros2 launch quadrotor_mpc experiment.launch.py ctrl:=mpcc        manual_gains:=true quad_name:="${1:-quadrotor}"; }
-dq_mpcc() { ros2 launch quadrotor_mpc experiment.launch.py ctrl:=dq_ablation manual_gains:=true quad_name:="${1:-quadrotor}"; }
-```
-
-Recargar: `source ~/.bashrc`.
 
 Uso:
 
