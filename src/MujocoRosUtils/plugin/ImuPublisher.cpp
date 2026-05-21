@@ -3,8 +3,11 @@
 #include <mujoco/mujoco.h>
 
 #include <algorithm>
+#include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <random>
+#include <string>
 
 namespace MujocoRosUtils
 {
@@ -156,6 +159,25 @@ void ImuPublisher::compute(const mjModel * m, mjData * d, int)
   msg.orientation.x = 0.0;
   msg.orientation.y = 0.0;
   msg.orientation.z = 0.0;
+
+  // Sensor noise injection — same toggle as OdometryPublisher (MUJOCO_ODOM_NOISE=1).
+  // ω feedback is now read from /imu (not odom) → must be noised HERE for the
+  // robust tune/SiL to see realistic gyro noise. σ_ω matches odom (0.02 rad/s).
+  static const bool noise_on =
+      [](){ const char* e = std::getenv("MUJOCO_ODOM_NOISE"); return e && std::string(e) == "1"; }();
+  if (noise_on) {
+    static std::mt19937 rng{54321u};
+    // σ_ω = 0.035 rad/s — matched to real Betaflight gyro noise floor (drone armed
+    // on ground, bag dq_mpcc_fast_may_20_03: σ_ω ≈ 31 mrad/s avg over xyz).
+    static std::normal_distribution<double> n_omega(0.0, 0.035);
+    static std::normal_distribution<double> n_accel(0.0, 0.05);
+    msg.angular_velocity.x += n_omega(rng);
+    msg.angular_velocity.y += n_omega(rng);
+    msg.angular_velocity.z += n_omega(rng);
+    msg.linear_acceleration.x += n_accel(rng);
+    msg.linear_acceleration.y += n_accel(rng);
+    msg.linear_acceleration.z += n_accel(rng);
+  }
 
   pub_->publish(msg);
 }

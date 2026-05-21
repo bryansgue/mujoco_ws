@@ -207,7 +207,7 @@ void OdometryPublisher::compute(const mjModel * m, mjData * d, int)
     static std::normal_distribution<double> n_pos(0.0, 0.010);
     static std::normal_distribution<double> n_quat(0.0, 0.0044);   // ≈0.5°/2 per quat component
     static std::normal_distribution<double> n_vel(0.0, 0.01);
-    static std::normal_distribution<double> n_omega(0.0, 0.02);
+    static std::normal_distribution<double> n_omega(0.0, 0.035);   // matched real gyro floor (~31 mrad/s)
     odom.pose.pose.position.x += n_pos(rng);
     odom.pose.pose.position.y += n_pos(rng);
     odom.pose.pose.position.z += n_pos(rng);
